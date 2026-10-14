@@ -1,0 +1,27 @@
+# local notes and tooling
+CLAUDE.md
+.claude/
+STATUS.md
+DEFENSE.md
+tools/
+Labs/**/gen.py
+Labs/**/requirements.json
+Labs/**/test_lab.py
+Labs/**/statement.txt
+Labs/**/*_project.zip
+__pycache__/
+*.pyc
+
+# UiPath Studio local state and build output
+.local/
+.screenshots/
+.tmh/
+Output/
+*.nupkg
+
+# data written when the workflows run
+**/Data/scores.csv
+
+# OS
+.DS_Store
+Thumbs.db

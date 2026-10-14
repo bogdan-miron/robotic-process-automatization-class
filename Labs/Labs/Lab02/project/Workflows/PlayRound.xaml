@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="PlayRound" VisualBasic.Settings="{x:Null}" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_PlayerName" Type="InArgument(x:String)" />
+    <x:Property Name="in_MaxNumber" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_MaxAttempts" Type="InArgument(x:Int32)" />
+    <x:Property Name="io_History" Type="InOutArgument(scg:List(x:Int32))" />
+    <x:Property Name="out_Attempts" Type="OutArgument(x:Int32)" />
+    <x:Property Name="out_Won" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_Secret" Type="OutArgument(x:Int32)" />
+  </x:Members>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Play one round" sap2010:Annotation.AnnotationText="The flowchart of Lab 01, now in its own workflow with arguments.">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="secretNumber" />
+      <Variable x:TypeArguments="x:Int32" Name="guess" />
+      <Variable x:TypeArguments="x:Int32" Name="attempts" />
+      <Variable x:TypeArguments="x:Boolean" Name="guessed" />
+      <Variable x:TypeArguments="x:String" Name="guessText" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Generate the secret number">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[secretNumber]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[New Random().Next(1, in_MaxNumber + 1)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign attempts">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[attempts]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign guessed">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[guessed]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <InvokeMethod DisplayName="Clear the history list" MethodName="Clear">
+      <InvokeMethod.TargetObject>
+        <InArgument x:TypeArguments="scg:List(x:Int32)">[io_History]</InArgument>
+      </InvokeMethod.TargetObject>
+    </InvokeMethod>
+    <Flowchart DisplayName="Flowchart: guess loop" sap2010:Annotation.AnnotationText="One round of the game. Ends when the number is found or the attempts run out.">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+          <av:Size x:Key="ShapeSize">60,75</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,117.5</av:PointCollection>
+          <x:Double x:Key="Height">1255.5</x:Double>
+          <x:Double x:Key="Width">670</x:Double>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Flowchart.StartNode>
+        <x:Reference>__ReferenceID0</x:Reference>
+      </Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID0">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,117.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,56</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,173.5 300,243.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:InputDialog DisplayName="Ask for a guess" Options="{x:Null}" OptionsString="{x:Null}" Title="Guess the number" IsPassword="False" Label="[in_PlayerName &amp; &quot;, guess a number from 1 to &quot; &amp; in_MaxNumber &amp; &quot;. Attempt &quot; &amp; (attempts + 1) &amp; &quot; of &quot; &amp; in_MaxAttempts]">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[guessText]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+        <FlowStep.Next>
+          <FlowDecision x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="Only digits, at most 6 of them." Condition="[guessText IsNot Nothing AndAlso guessText.Trim().Length &gt; 0 AndAlso guessText.Trim().Length &lt; 7 AndAlso Not (guessText.Trim() Like &quot;*[!0-9]*&quot;)]" DisplayName="Whole number?">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <av:Point x:Key="ShapeLocation">235,243.5</av:Point>
+                <av:Size x:Key="ShapeSize">130,110</av:Size>
+                <av:PointCollection x:Key="TrueConnector">235,298.5 210,298.5 210,398.5 130,398.5 130,423.5</av:PointCollection>
+                <av:PointCollection x:Key="FalseConnector">365,298.5 390,298.5 390,398.5 470,398.5 470,423.5</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <FlowDecision.True>
+              <FlowStep x:Name="__ReferenceID2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">30,423.5</av:Point>
+                    <av:Size x:Key="ShapeSize">200,56</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">130,479.5 130,504.5 130,524.5 300,524.5 300,549.5</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="Register the guess">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign guess">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[guess]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[CInt(guessText.Trim())]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign attempts">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[attempts]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[attempts + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <InvokeMethod DisplayName="Add guess to history" MethodName="Add">
+                    <InvokeMethod.TargetObject>
+                      <InArgument x:TypeArguments="scg:List(x:Int32)">[io_History]</InArgument>
+                    </InvokeMethod.TargetObject>
+                    <InArgument x:TypeArguments="x:Int32">[guess]</InArgument>
+                  </InvokeMethod>
+                </Sequence>
+                <FlowStep.Next>
+                  <FlowDecision x:Name="__ReferenceID3" Condition="[guess = secretNumber]" DisplayName="Guess is correct?">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <av:Point x:Key="ShapeLocation">235,549.5</av:Point>
+                        <av:Size x:Key="ShapeSize">130,110</av:Size>
+                        <av:PointCollection x:Key="TrueConnector">235,604.5 210,604.5 210,731.5 130,731.5 130,756.5</av:PointCollection>
+                        <av:PointCollection x:Key="FalseConnector">365,604.5 390,604.5 390,704.5 470,704.5 470,729.5</av:PointCollection>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <FlowDecision.True>
+                      <FlowStep x:Name="__ReferenceID4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">30,756.5</av:Point>
+                            <av:Size x:Key="ShapeSize">200,56</av:Size>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Mark as guessed">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[guessed]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </FlowStep>
+                    </FlowDecision.True>
+                    <FlowDecision.False>
+                      <FlowDecision x:Name="__ReferenceID5" Condition="[attempts &gt;= in_MaxAttempts]" DisplayName="No attempts left?">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <av:Point x:Key="ShapeLocation">405,729.5</av:Point>
+                            <av:Size x:Key="ShapeSize">130,110</av:Size>
+                            <av:PointCollection x:Key="FalseConnector">535,784.5 560,784.5 560,884.5 300,884.5 300,909.5</av:PointCollection>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <FlowDecision.False>
+                          <FlowDecision x:Name="__ReferenceID6" Condition="[guess &gt; secretNumber]" DisplayName="Guess too high?">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <av:Point x:Key="ShapeLocation">235,909.5</av:Point>
+                                <av:Size x:Key="ShapeSize">130,110</av:Size>
+                                <av:PointCollection x:Key="TrueConnector">235,964.5 210,964.5 210,1064.5 130,1064.5 130,1089.5</av:PointCollection>
+                                <av:PointCollection x:Key="FalseConnector">365,964.5 390,964.5 390,1064.5 470,1064.5 470,1089.5</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <FlowDecision.True>
+                              <FlowStep x:Name="__ReferenceID7">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">30,1089.5</av:Point>
+                                    <av:Size x:Key="ShapeSize">200,56</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">130,1145.5 130,1170.5 630,1170.5 630,92.5 300,92.5 300,117.5</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MessageBox DisplayName="Hint: smaller" Caption="Guess the number" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Text="[&quot;Enter a smaller number!&quot;]" />
+                                <FlowStep.Next>
+                                  <x:Reference>__ReferenceID0</x:Reference>
+                                </FlowStep.Next>
+                              </FlowStep>
+                            </FlowDecision.True>
+                            <FlowDecision.False>
+                              <FlowStep x:Name="__ReferenceID8">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">370,1089.5</av:Point>
+                                    <av:Size x:Key="ShapeSize">200,56</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">470,1145.5 470,1170.5 630,1170.5 630,92.5 300,92.5 300,117.5</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MessageBox DisplayName="Hint: bigger" Caption="Guess the number" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Text="[&quot;Enter a bigger number!&quot;]" />
+                                <FlowStep.Next>
+                                  <x:Reference>__ReferenceID0</x:Reference>
+                                </FlowStep.Next>
+                              </FlowStep>
+                            </FlowDecision.False>
+                          </FlowDecision>
+                        </FlowDecision.False>
+                      </FlowDecision>
+                    </FlowDecision.False>
+                  </FlowDecision>
+                </FlowStep.Next>
+              </FlowStep>
+            </FlowDecision.True>
+            <FlowDecision.False>
+              <FlowStep x:Name="__ReferenceID9">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">370,423.5</av:Point>
+                    <av:Size x:Key="ShapeSize">200,56</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">470,479.5 470,504.5 630,504.5 630,92.5 300,92.5 300,117.5</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MessageBox DisplayName="Invalid input message" Caption="Guess the number" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Text="[&quot;Please enter a whole number, for example 7.&quot;]" />
+                <FlowStep.Next>
+                  <x:Reference>__ReferenceID0</x:Reference>
+                </FlowStep.Next>
+              </FlowStep>
+            </FlowDecision.False>
+          </FlowDecision>
+        </FlowStep.Next>
+      </FlowStep>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID9</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+      <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
+      <x:Reference>__ReferenceID6</x:Reference>
+      <x:Reference>__ReferenceID7</x:Reference>
+      <x:Reference>__ReferenceID8</x:Reference>
+    </Flowchart>
+    <Assign DisplayName="Return the attempts">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[out_Attempts]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[attempts]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Return the result">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[out_Won]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[guessed]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Return the secret number">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[out_Secret]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[secretNumber]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>
