@@ -1,0 +1,6 @@
+C:\CustomActivities\ListActivities\ListActivities\bin\Release\ListActivities.dll
+C:\CustomActivities\ListActivities\ListActivities\bin\Release\ListActivities.pdb
+C:\CustomActivities\ListActivities\ListActivities\obj\Release\ListActivities.csproj.AssemblyReference.cache
+C:\CustomActivities\ListActivities\ListActivities\obj\Release\ListActivities.csproj.CoreCompileInputs.cache
+C:\CustomActivities\ListActivities\ListActivities\obj\Release\ListActivities.dll
+C:\CustomActivities\ListActivities\ListActivities\obj\Release\ListActivities.pdb

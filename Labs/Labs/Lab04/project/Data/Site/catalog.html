@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parts Catalog</title>
+<style>
+  body { font-family: Segoe UI, Arial, sans-serif; margin: 24px; color: #1d2733; }
+  h1 { font-size: 22px; margin: 0 0 16px; }
+  form, .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+  label { font-size: 13px; color: #55606e; }
+  input { padding: 6px 8px; border: 1px solid #b8c1cc; border-radius: 4px; width: 150px; }
+  button { padding: 6px 12px; border: 1px solid #1f5fbf; background: #2a6fd6; color: #fff; border-radius: 4px; cursor: pointer; }
+  .bar button { background: #fff; color: #1f5fbf; }
+  p { margin: 4px 0; font-size: 14px; }
+  table { border-collapse: collapse; margin-top: 12px; min-width: 560px; }
+  th, td { border: 1px solid #d3d9e0; padding: 6px 10px; text-align: left; font-size: 14px; }
+  th { background: #eef2f6; }
+</style>
+</head>
+<body>
+<h1>Parts Catalog</h1>
+<form id="filterForm" autocomplete="off">
+  <label for="searchBox">Name contains</label>
+  <input type="text" id="searchBox" name="search">
+  <label for="maxPrice">Max price (EUR)</label>
+  <input type="text" id="maxPrice" name="maxPrice">
+  <button type="submit" id="btnSearch">Search</button>
+</form>
+<div class="bar">
+  <button type="button" id="btnStockOnly">In stock only</button>
+  <button type="button" id="btnAllStock">Show all</button>
+  <button type="button" id="btnSortPrice">Sort by price</button>
+  <button type="button" id="btnSortSku">Sort by SKU</button>
+</div>
+<p id="filterSummary">Filters: none</p>
+<p id="resultCount">Products found: 0</p>
+<table id="productTable">
+  <thead><tr><th>SKU</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th></tr></thead>
+  <tbody id="productBody"></tbody>
+</table>
+<script id="catalogData" type="application/json">[
+ {
+  "sku": "P-1001",
+  "name": "USB-C Cable 1m",
+  "category": "Cables",
+  "price": "6.90",
+  "stock": 120
+ },
+ {
+  "sku": "P-1002",
+  "name": "USB-C Cable 2m",
+  "category": "Cables",
+  "price": "8.90",
+  "stock": 80
+ },
+ {
+  "sku": "P-1003",
+  "name": "HDMI Cable 2m",
+  "category": "Cables",
+  "price": "11.50",
+  "stock": 0
+ },
+ {
+  "sku": "P-1004",
+  "name": "Ethernet Cable 5m",
+  "category": "Cables",
+  "price": "9.40",
+  "stock": 45
+ },
+ {
+  "sku": "P-1005",
+  "name": "Network Switch 8 ports",
+  "category": "Network",
+  "price": "39.00",
+  "stock": 12
+ },
+ {
+  "sku": "P-1006",
+  "name": "Wireless Mouse",
+  "category": "Peripherals",
+  "price": "14.90",
+  "stock": 60
+ },
+ {
+  "sku": "P-1007",
+  "name": "Mechanical Keyboard",
+  "category": "Peripherals",
+  "price": "59.90",
+  "stock": 0
+ },
+ {
+  "sku": "P-1008",
+  "name": "USB Hub 4 ports",
+  "category": "Peripherals",
+  "price": "17.50",
+  "stock": 33
+ },
+ {
+  "sku": "P-1009",
+  "name": "Laptop Stand",
+  "category": "Accessories",
+  "price": "29.90",
+  "stock": 18
+ },
+ {
+  "sku": "P-1010",
+  "name": "Webcam HD",
+  "category": "Peripherals",
+  "price": "34.00",
+  "stock": 7
+ },
+ {
+  "sku": "P-1011",
+  "name": "Power Cable 3m",
+  "category": "Cables",
+  "price": "5.60",
+  "stock": 200
+ },
+ {
+  "sku": "P-1012",
+  "name": "Monitor Arm",
+  "category": "Accessories",
+  "price": "49.00",
+  "stock": 5
+ },
+ {
+  "sku": "P-1013",
+  "name": "SATA Cable",
+  "category": "Cables",
+  "price": "3.90",
+  "stock": 0
+ },
+ {
+  "sku": "P-1014",
+  "name": "Cable Organizer Box",
+  "category": "Accessories",
+  "price": "12.00",
+  "stock": 25
+ }
+]</script>
+<script>
+  var products = JSON.parse(document.getElementById("catalogData").textContent);
+  var applied = { term: "", max: null, maxText: "" };
+  var stockOnly = false;
+  var sortBy = "sku";
+
+  function apply() {
+    applied.term = document.getElementById("searchBox").value.trim();
+    var text = document.getElementById("maxPrice").value.trim();
+    var ok = /^\d+(\.\d+)?$/.test(text);
+    applied.max = ok ? parseFloat(text) : null;
+    applied.maxText = ok ? text : "";
+    render();
+  }
+
+  function render() {
+    var term = applied.term.toLowerCase();
+    var rows = products.filter(function (p) {
+      return p.name.toLowerCase().indexOf(term) !== -1
+        && (applied.max === null || parseFloat(p.price) <= applied.max)
+        && (!stockOnly || p.stock > 0);
+    });
+    rows.sort(function (a, b) {
+      return sortBy === "price" ? parseFloat(a.price) - parseFloat(b.price) || a.sku.localeCompare(b.sku)
+                                : a.sku.localeCompare(b.sku);
+    });
+    var body = document.getElementById("productBody");
+    body.innerHTML = "";
+    rows.forEach(function (p) {
+      var tr = document.createElement("tr");
+      [p.sku, p.name, p.category, p.price, String(p.stock)].forEach(function (v) {
+        var td = document.createElement("td");
+        td.textContent = v;
+        tr.appendChild(td);
+      });
+      body.appendChild(tr);
+    });
+    var parts = [];
+    if (applied.term !== "") parts.push("name contains '" + applied.term + "'");
+    if (applied.max !== null) parts.push("max price " + applied.maxText);
+    if (stockOnly) parts.push("in stock only");
+    document.getElementById("filterSummary").textContent = "Filters: " + (parts.length ? parts.join(", ") : "none");
+    document.getElementById("resultCount").textContent = "Products found: " + rows.length;
+  }
+
+  document.getElementById("filterForm").addEventListener("submit", function (e) { e.preventDefault(); apply(); });
+  document.getElementById("btnStockOnly").addEventListener("click", function () { stockOnly = true; render(); });
+  document.getElementById("btnAllStock").addEventListener("click", function () { stockOnly = false; render(); });
+  document.getElementById("btnSortPrice").addEventListener("click", function () { sortBy = "price"; render(); });
+  document.getElementById("btnSortSku").addEventListener("click", function () { sortBy = "sku"; render(); });
+  render();
+</script>
+</body>
+</html>

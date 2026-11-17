@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Lab06: Send e-mails with attachments from an Excel file" sap2010:Annotation.AnnotationText="Main only coordinates. The password is asked when the e-mails are really sent. It is not stored in any file.">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="settingsPath" />
+      <Variable x:TypeArguments="x:String" Name="recipientsPath" />
+      <Variable x:TypeArguments="x:String" Name="attachmentsFolder" />
+      <Variable x:TypeArguments="x:String" Name="logPath" />
+      <Variable x:TypeArguments="x:String" Name="smtpPassword" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="settings" Default="[New Dictionary(Of String, String)]" />
+      <Variable x:TypeArguments="sd:DataTable" Name="recipients" />
+      <Variable x:TypeArguments="sd:DataTable" Name="results" />
+      <Variable x:TypeArguments="x:Boolean" Name="dryRun" />
+      <Variable x:TypeArguments="x:Int32" Name="sent" />
+      <Variable x:TypeArguments="x:Int32" Name="skipped" />
+      <Variable x:TypeArguments="x:Int32" Name="failed" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" Level="Info" Message="[&quot;Lab06 started&quot;]" />
+    <Assign DisplayName="Assign settingsPath">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[settingsPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Data\settings.csv"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign recipientsPath">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[recipientsPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Data\recipients.xlsx"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign attachmentsFolder">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[attachmentsFolder]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Data\Attachments"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign logPath">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[logPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Data\Results\send_log.xlsx"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <TryCatch DisplayName="Try Catch: the whole process">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If DisplayName="If the old log exists" Condition="[System.IO.File.Exists(logPath)]">
+            <If.Then>
+              <Sequence DisplayName="Then">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:Delete DisplayName="Delete the old log" Path="[logPath]" />
+              </Sequence>
+            </If.Then>
+          </If>
+          <ui:InvokeWorkflowFile DisplayName="Invoke ReadSettings" ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" UnSafe="False" WorkflowFileName="Workflows\ReadSettings.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SettingsPath">[settingsPath]</InArgument>
+              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="out_Settings">[settings]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <Assign DisplayName="Dry run unless DryRun is False">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[dryRun]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">[Not (settings.ContainsKey("DryRun") AndAlso settings("DryRun").Trim().ToLower() = "false")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign smtpPassword">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[smtpPassword]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[""]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <If DisplayName="If the e-mails are really sent" Condition="[Not dryRun]">
+            <If.Then>
+              <Sequence DisplayName="Then">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InputDialog DisplayName="Ask for the SMTP password" Options="{x:Null}" OptionsString="{x:Null}" Title="Send reports by e-mail" IsPassword="True" Label="[&quot;Password of &quot; &amp; settings(&quot;Sender&quot;) &amp; &quot; (SMTP)&quot;]">
+                  <ui:InputDialog.Result>
+                    <OutArgument x:TypeArguments="x:String">[smtpPassword]</OutArgument>
+                  </ui:InputDialog.Result>
+                </ui:InputDialog>
+                <If DisplayName="Business rule: a password was given" Condition="[smtpPassword Is Nothing OrElse smtpPassword = &quot;&quot;]">
+                  <If.Then>
+                    <Sequence DisplayName="Then">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Throw DisplayName="Throw: no password" Exception="[New BusinessRuleException(&quot;No password was entered, nothing was sent.&quot;)]" />
+                    </Sequence>
+                  </If.Then>
+                </If>
+              </Sequence>
+            </If.Then>
+          </If>
+          <ui:InvokeWorkflowFile DisplayName="Invoke ReadRecipients" ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" UnSafe="False" WorkflowFileName="Workflows\ReadRecipients.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Path">[recipientsPath]</InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Recipients">[recipients]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile DisplayName="Invoke SendEmails" ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" UnSafe="False" WorkflowFileName="Workflows\SendEmails.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Recipients">[recipients]</InArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_Settings">[settings]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Password">[smtpPassword]</InArgument>
+              <InArgument x:TypeArguments="x:Boolean" x:Key="in_DryRun">[dryRun]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_AttachmentsFolder">[attachmentsFolder]</InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Results">[results]</OutArgument>
+              <OutArgument x:TypeArguments="x:Int32" x:Key="out_Sent">[sent]</OutArgument>
+              <OutArgument x:TypeArguments="x:Int32" x:Key="out_Skipped">[skipped]</OutArgument>
+              <OutArgument x:TypeArguments="x:Int32" x:Key="out_Failed">[failed]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:WriteRange DisplayName="Write Range: the send log" StartingCell="{x:Null}" AddHeaders="True" DataTable="[results]" SheetName="[&quot;Log&quot;]" WorkbookPath="[logPath]" />
+          <ui:MessageBox DisplayName="Show the result" Caption="Send reports by e-mail" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Text="[If(dryRun, &quot;DRY RUN, nothing was sent.&quot; &amp; Environment.NewLine, &quot;&quot;) &amp; &quot;Prepared or sent: &quot; &amp; sent &amp; Environment.NewLine &amp; &quot;Skipped: &quot; &amp; skipped &amp; Environment.NewLine &amp; &quot;Failed: &quot; &amp; failed &amp; Environment.NewLine &amp; &quot;Log: &quot; &amp; logPath]" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BusinessRuleException">
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="brex" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Catch BusinessRuleException">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log the business rule problem" Level="Warn" Message="[&quot;Business rule: &quot; &amp; brex.Message]" />
+              <ui:MessageBox DisplayName="Tell the user" Caption="Send reports by e-mail" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Text="[&quot;Nothing was sent. &quot; &amp; brex.Message]" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="s:Exception">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="ex" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Catch Exception">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log the system exception" Level="Error" Message="[&quot;System exception: &quot; &amp; ex.Message]" />
+              <ui:MessageBox DisplayName="Tell the user" Caption="Send reports by e-mail" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Text="[&quot;The process stopped: &quot; &amp; ex.Message]" />
+              <Rethrow DisplayName="Rethrow" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message" Level="Info" Message="[&quot;Lab06 finished&quot;]" />
+  </Sequence>
+</Activity>

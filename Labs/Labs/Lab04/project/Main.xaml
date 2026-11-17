@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Lab04: filter and scrape a web catalog" sap2010:Annotation.AnnotationText="Main asks for the filters, checks them and coordinates two invoked workflows: ScrapeCatalog (all UI work) and SaveResults.">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="searchTerm" />
+      <Variable x:TypeArguments="x:String" Name="maxPriceText" />
+      <Variable x:TypeArguments="x:String" Name="pageUrl" />
+      <Variable x:TypeArguments="x:String" Name="sitePath" Default="[&quot;Data\Site\catalog.html&quot;]" />
+      <Variable x:TypeArguments="x:String" Name="csvPath" Default="[&quot;Data\Results\products.csv&quot;]" />
+      <Variable x:TypeArguments="x:String" Name="summaryPath" Default="[&quot;Data\Results\summary.txt&quot;]" />
+      <Variable x:TypeArguments="x:String" Name="filterText" />
+      <Variable x:TypeArguments="x:String" Name="countText" />
+      <Variable x:TypeArguments="sd:DataTable" Name="products" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" Level="Info" Message="[&quot;Lab04 started&quot;]" />
+    <TryCatch DisplayName="Try Catch: the whole process" sap2010:Annotation.AnnotationText="General exception handler. Business rule exception: the input or the data is the problem, the user is told and the run ends normally. Any other exception (page not found, selector not found, ...): logged, shown and rethrown so the job fails.">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InputDialog DisplayName="Ask for the name filter" Options="{x:Null}" OptionsString="{x:Null}" Title="Parts catalog" IsPassword="False" Label="[&quot;Part of the product name to look for (for example: cable)&quot;]">
+            <ui:InputDialog.Result>
+              <OutArgument x:TypeArguments="x:String">[searchTerm]</OutArgument>
+            </ui:InputDialog.Result>
+          </ui:InputDialog>
+          <ui:InputDialog DisplayName="Ask for the maximum price" Options="{x:Null}" OptionsString="{x:Null}" Title="Parts catalog" IsPassword="False" Label="[&quot;Maximum price in EUR, with a dot for decimals (for example: 10 or 12.5)&quot;]">
+            <ui:InputDialog.Result>
+              <OutArgument x:TypeArguments="x:String">[maxPriceText]</OutArgument>
+            </ui:InputDialog.Result>
+          </ui:InputDialog>
+          <If DisplayName="Business rule: a name filter is needed" Condition="[String.IsNullOrWhiteSpace(searchTerm)]">
+            <If.Then>
+              <Sequence DisplayName="Then">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw DisplayName="Throw: no name filter" Exception="[New BusinessRuleException(&quot;The name filter is empty. Type a part of a product name.&quot;)]" />
+              </Sequence>
+            </If.Then>
+          </If>
+          <Assign DisplayName="Assign searchTerm">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[searchTerm]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[searchTerm.Trim()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <If DisplayName="Business rule: a maximum price is needed" Condition="[String.IsNullOrWhiteSpace(maxPriceText)]">
+            <If.Then>
+              <Sequence DisplayName="Then">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw DisplayName="Throw: no maximum price" Exception="[New BusinessRuleException(&quot;The maximum price is empty. Type a number such as 10 or 12.5.&quot;)]" />
+              </Sequence>
+            </If.Then>
+          </If>
+          <Assign DisplayName="Assign maxPriceText">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[maxPriceText]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[maxPriceText.Trim()]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <If DisplayName="Business rule: the maximum price is a number" Condition="[Not System.Text.RegularExpressions.Regex.IsMatch(maxPriceText, &quot;^\d+(\.\d+)?$&quot;)]">
+            <If.Then>
+              <Sequence DisplayName="Then">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw DisplayName="Throw: bad maximum price" Exception="[New BusinessRuleException(&quot;The maximum price must be a number with a dot for decimals (for example 12.5), not &quot; &amp; maxPriceText)]" />
+              </Sequence>
+            </If.Then>
+          </If>
+          <Assign DisplayName="Build the page address">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[pageUrl]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["file:///" &amp; System.IO.Path.GetFullPath(sitePath).Replace("\", "/")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:InvokeWorkflowFile DisplayName="Invoke ScrapeCatalog" ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" UnSafe="False" WorkflowFileName="Workflows\ScrapeCatalog.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_PageUrl">[pageUrl]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SearchTerm">[searchTerm]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_MaxPrice">[maxPriceText]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_FilterText">[filterText]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_CountText">[countText]</OutArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Products">[products]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile DisplayName="Invoke SaveResults" ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" UnSafe="False" WorkflowFileName="Workflows\SaveResults.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Products">[products]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_FilterText">[filterText]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_CountText">[countText]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_CsvPath">[csvPath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SummaryPath">[summaryPath]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:MessageBox DisplayName="Show the result" Caption="Parts catalog" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Text="[&quot;Products saved: &quot; &amp; products.Rows.Count &amp; Environment.NewLine &amp; &quot;Page filters: &quot; &amp; filterText.Replace(&quot;Filters: &quot;, &quot;&quot;) &amp; Environment.NewLine &amp; &quot;Files: &quot; &amp; csvPath &amp; &quot; and &quot; &amp; summaryPath]" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BusinessRuleException">
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="brex" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Catch BusinessRuleException">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log the business rule problem" Level="Warn" Message="[&quot;Business rule: &quot; &amp; brex.Message]" />
+              <ui:MessageBox DisplayName="Tell the user" Caption="Parts catalog" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Text="[&quot;Nothing was saved. &quot; &amp; brex.Message]" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="s:Exception">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="ex" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Catch Exception">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log the system exception" Level="Error" Message="[&quot;System exception: &quot; &amp; ex.Message]" />
+              <ui:MessageBox DisplayName="Tell the user" Caption="Parts catalog" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Text="[&quot;The process stopped: &quot; &amp; ex.Message]" />
+              <Rethrow DisplayName="Rethrow" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message" Level="Info" Message="[&quot;Lab04 finished&quot;]" />
+  </Sequence>
+</Activity>

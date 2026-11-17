@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Lab05: Invoices from PDF to Excel" sap2010:Annotation.AnnotationText="Main only coordinates. Change the variable minAmount to change the filter.">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="invoicesFolder" />
+      <Variable x:TypeArguments="x:String" Name="clientsPath" />
+      <Variable x:TypeArguments="x:String" Name="invoicesXlsx" />
+      <Variable x:TypeArguments="x:String" Name="reportXlsx" />
+      <Variable x:TypeArguments="x:String" Name="skippedPath" />
+      <Variable x:TypeArguments="x:Double" Name="minAmount" Default="1000" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="countries" Default="[New Dictionary(Of String, String)]" />
+      <Variable x:TypeArguments="sd:DataTable" Name="invoices" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="skipped" Default="[New List(Of String)]" />
+      <Variable x:TypeArguments="x:Int32" Name="allCount" />
+      <Variable x:TypeArguments="x:Int32" Name="largeCount" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" Level="Info" Message="[&quot;Lab05 started&quot;]" />
+    <Assign DisplayName="Assign invoicesFolder">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[invoicesFolder]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Data\Invoices"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign clientsPath">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[clientsPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Data\clients.csv"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign invoicesXlsx">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[invoicesXlsx]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Data\Results\Invoices.xlsx"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign reportXlsx">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[reportXlsx]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Data\Results\Report.xlsx"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign skippedPath">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[skippedPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Data\Results\skipped_files.txt"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign skipped">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(x:String)">[skipped]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <TryCatch DisplayName="Try Catch: the whole process" sap2010:Annotation.AnnotationText="Business rule exception: the data is the problem, the user is told. System exception: logged and rethrown.">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If DisplayName="If invoicesXlsx exists" Condition="[System.IO.File.Exists(invoicesXlsx)]">
+            <If.Then>
+              <Sequence DisplayName="Then">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:Delete DisplayName="Delete the old file" Path="[invoicesXlsx]" />
+              </Sequence>
+            </If.Then>
+          </If>
+          <If DisplayName="If reportXlsx exists" Condition="[System.IO.File.Exists(reportXlsx)]">
+            <If.Then>
+              <Sequence DisplayName="Then">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:Delete DisplayName="Delete the old file" Path="[reportXlsx]" />
+              </Sequence>
+            </If.Then>
+          </If>
+          <If DisplayName="If skippedPath exists" Condition="[System.IO.File.Exists(skippedPath)]">
+            <If.Then>
+              <Sequence DisplayName="Then">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:Delete DisplayName="Delete the old file" Path="[skippedPath]" />
+              </Sequence>
+            </If.Then>
+          </If>
+          <ui:InvokeWorkflowFile DisplayName="Invoke LoadClients" ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" UnSafe="False" WorkflowFileName="Workflows\LoadClients.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ClientsCsv">[clientsPath]</InArgument>
+              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="out_Countries">[countries]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile DisplayName="Invoke ExtractInvoices" ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" UnSafe="False" WorkflowFileName="Workflows\ExtractInvoices.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[invoicesFolder]</InArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="in_Countries">[countries]</InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Invoices">[invoices]</OutArgument>
+              <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_Skipped">[skipped]</InOutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <If DisplayName="If some files were skipped" Condition="[skipped.Count &gt; 0]">
+            <If.Then>
+              <Sequence DisplayName="Then">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:WriteTextFile DisplayName="Write the skipped files to a text file" FileName="[skippedPath]" Text="[String.Join(Environment.NewLine, skipped)]" />
+              </Sequence>
+            </If.Then>
+          </If>
+          <If DisplayName="Business rule: at least one invoice" Condition="[invoices.Rows.Count = 0]">
+            <If.Then>
+              <Sequence DisplayName="Then">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw DisplayName="Throw: nothing to process" Exception="[New BusinessRuleException(&quot;No valid invoice was found in &quot; &amp; invoicesFolder)]" />
+              </Sequence>
+            </If.Then>
+          </If>
+          <ui:InvokeWorkflowFile DisplayName="Invoke WriteTableToExcel: all invoices" ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" UnSafe="False" WorkflowFileName="Workflows\WriteTableToExcel.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Table">[invoices]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_WorkbookPath">[invoicesXlsx]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">["Invoices"]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile DisplayName="Invoke ProcessInvoices" ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" UnSafe="False" WorkflowFileName="Workflows\ProcessInvoices.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_InvoicesPath">[invoicesXlsx]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ReportPath">[reportXlsx]</InArgument>
+              <InArgument x:TypeArguments="x:Double" x:Key="in_MinAmount">[minAmount]</InArgument>
+              <OutArgument x:TypeArguments="x:Int32" x:Key="out_AllCount">[allCount]</OutArgument>
+              <OutArgument x:TypeArguments="x:Int32" x:Key="out_LargeCount">[largeCount]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:MessageBox DisplayName="Show the result" Caption="Invoice processing" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Text="[&quot;Invoices processed: &quot; &amp; allCount &amp; Environment.NewLine &amp; &quot;Files skipped: &quot; &amp; skipped.Count &amp; Environment.NewLine &amp; &quot;Invoices of at least &quot; &amp; minAmount &amp; &quot; EUR: &quot; &amp; largeCount &amp; Environment.NewLine &amp; &quot;Report: &quot; &amp; reportXlsx]" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BusinessRuleException">
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="brex" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Catch BusinessRuleException">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log the business rule problem" Level="Warn" Message="[&quot;Business rule: &quot; &amp; brex.Message]" />
+              <ui:MessageBox DisplayName="Tell the user" Caption="Invoice processing" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Text="[&quot;Nothing was processed. &quot; &amp; brex.Message]" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="s:Exception">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="ex" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Catch Exception">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log the system exception" Level="Error" Message="[&quot;System exception: &quot; &amp; ex.Message]" />
+              <ui:MessageBox DisplayName="Tell the user" Caption="Invoice processing" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Text="[&quot;The process stopped: &quot; &amp; ex.Message]" />
+              <Rethrow DisplayName="Rethrow" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message" Level="Info" Message="[&quot;Lab05 finished&quot;]" />
+  </Sequence>
+</Activity>

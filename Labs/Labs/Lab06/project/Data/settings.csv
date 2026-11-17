@@ -1,0 +1,5 @@
+Key,Value
+SmtpServer,smtp.gmail.com
+SmtpPort,587
+Sender,your.address@gmail.com
+DryRun,True

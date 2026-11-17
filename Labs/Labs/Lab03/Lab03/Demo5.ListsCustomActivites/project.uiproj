@@ -1,0 +1,6 @@
+{
+  "Name": "Demo11.ListsCustomActivites",
+  "ProjectType": "Process",
+  "Description": "Custom activities usage. invoke code, UiPath library, C# library",
+  "MainFile": "Main.xaml"
+}

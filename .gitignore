@@ -7,8 +7,12 @@ tools/
 Labs/**/gen.py
 Labs/**/requirements.json
 Labs/**/test_lab.py
+Labs/**/catalog_site.py
+Labs/**/catalog_page.py
+Labs/**/verify_page.py
 Labs/**/statement.txt
 Labs/**/*_project.zip
+Labs/**/*_library.zip
 __pycache__/
 *.pyc
 
@@ -21,6 +25,12 @@ Output/
 
 # data written when the workflows run
 **/Data/scores.csv
+**/Data/last_game.txt
+**/Data/Results/*.xlsx
+**/Data/Results/skipped_files.txt
+**/Data/Results/send_log.xlsx
+**/Data/Results/products.csv
+**/Data/Results/summary.txt
 
 # OS
 .DS_Store

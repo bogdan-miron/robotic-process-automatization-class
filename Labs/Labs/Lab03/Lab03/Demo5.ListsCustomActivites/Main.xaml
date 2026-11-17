@@ -1,0 +1,441 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="521.2,402.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:l="clr-namespace:ListOpLibraryNew;assembly=ListOpLibraryNew" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>ListOpsNew</x:String>
+      <x:String>ListActivities</x:String>
+      <x:String>ListOpsLib</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>ListOpLibrary</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>ListOpLibraryNew</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>ListOpsNew</AssemblyReference>
+      <AssemblyReference>ListActivities</AssemblyReference>
+      <AssemblyReference>ListOpsLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>ListOpLibrary</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>ListOpLibraryNew</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap:VirtualizedContainerService.HintSize="512,474.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(x:Object)" Name="drinksList" />
+      <Variable x:TypeArguments="x:Int32" Default="4" Name="index" />
+      <Variable x:TypeArguments="scg:List(x:Object)" Default="[new List (of Object)]" Name="billList" />
+      <Variable x:TypeArguments="x:Object" Name="currentDrink" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Sequence- Init List of drinks" sap:VirtualizedContainerService.HintSize="450,83.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="scg:List(x:Object)">[drinksList]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="scg:List(x:Object)">[new List (of Object) from {“still water”, “sparkling water”, “tea”, “coffee”, “wine”, “juice”}]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="434,136.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Add">
+        <InvokeMethod.TargetObject>
+          <InArgument x:TypeArguments="scg:List(x:Object)">[drinksList]</InArgument>
+        </InvokeMethod.TargetObject>
+        <InArgument x:TypeArguments="x:Object">["green tea"]</InArgument>
+      </InvokeMethod>
+      <AddToCollection x:TypeArguments="x:Object" Collection="[drinksList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="434,24.8" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="[&quot;black tea&quot;]" />
+      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,53.2" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[String.Join(&quot;, &quot;, drinksList)]" />
+    </Sequence>
+    <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="484,225.60000000000002" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+      <DoWhile.Condition>
+        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="index&lt;&gt;0" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+      </DoWhile.Condition>
+      <Flowchart sap:VirtualizedContainerService.HintSize="800.8,1079.6" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+        <Flowchart.Variables>
+          <Variable x:TypeArguments="x:Int32" Name="random" />
+          <Variable x:TypeArguments="x:String" Name="result" />
+        </Flowchart.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+            <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">330,40.1 385.4,40.1 385.4,110</av:PointCollection>
+            <x:Double x:Key="Height">1042.6000000000001</x:Double>
+            <x:Double x:Key="Width">766.8</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Flowchart.StartNode>
+          <x:Reference>__ReferenceID12</x:Reference>
+        </Flowchart.StartNode>
+        <FlowStep x:Name="__ReferenceID12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">168.4,110</av:Point>
+              <av:Size x:Key="ShapeSize">434,82.4</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">168.4,151.2 225.39999999999998,151.2 225.39999999999998,190</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[random]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">[new Random().Next(0,7)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">8.39999999999999,190</av:Point>
+                  <av:Size x:Key="ShapeSize">434,82.4</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">225.39999999999998,272.4 225.39999999999998,290.20000000000005 280,290.20000000000005</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">[currentDrink]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Object">[drinksList(random)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">280,263.6</av:Point>
+                      <av:Size x:Key="ShapeSize">200,53.2</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">380,316.4 380,346.4 320,346.4 320,356.4</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" ChosenButton="[result]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Do you want to drink some &quot;+drinksList(random).ToString]" TopMost="True" />
+                  <FlowStep.Next>
+                    <FlowDecision x:Name="__ReferenceID2" Condition="[result=&quot;Yes&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">280.8,356.4</av:Point>
+                          <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                          <av:PointCollection x:Key="TrueConnector">280.8,400 250.8,400 250.8,401.2 250,401.2</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">360,400 380,400 380,401.2</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">50,388.8</av:Point>
+                              <av:Size x:Key="ShapeSize">200,24.8</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">150,413.6 150,443.6 100,443.6 100,488.2</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <RemoveFromCollection x:TypeArguments="x:Object" Collection="[drinksList]" DisplayName="Remove From Collection" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_1" Item="[currentDrink]" />
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID5">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">0,488.2</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,53.2</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">100,540.6 100,570.6 110,570.6 110,643.8</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="CommentOut_16">
+                                <ui:CommentOut.Body>
+                                  <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                    <InvokeMethod DisplayName="Method0: Invoke Method" sap:VirtualizedContainerService.HintSize="238,135.2" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="Insert">
+                                      <InvokeMethod.TargetObject>
+                                        <InArgument x:TypeArguments="scg:List(x:Object)">[drinksList]</InArgument>
+                                      </InvokeMethod.TargetObject>
+                                      <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                      <InArgument x:TypeArguments="x:Object">[currentDrink]</InArgument>
+                                    </InvokeMethod>
+                                  </Sequence>
+                                </ui:CommentOut.Body>
+                              </ui:CommentOut>
+                              <FlowStep.Next>
+                                <FlowStep x:Name="__ReferenceID9">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">10,643.8</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,53.2</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">110,697 110,727 100,727 100,741.4</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="CommentOut_14">
+                                    <ui:CommentOut.Body>
+                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,144.4" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:InvokeCode ContinueOnError="{x:Null}" Code="drinksListArg.Insert(indexArg, itemArg)&#xA;Console.WriteLine(&quot;[Invoke Code activity]:&quot;+&quot; item &quot;+itemArg.ToString+&quot; was inserted on index &quot;+indexArg.ToString)" DisplayName="Method1: Invoke Code" sap:VirtualizedContainerService.HintSize="200,52.4" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                                          <ui:InvokeCode.Arguments>
+                                            <InOutArgument x:TypeArguments="scg:List(x:Object)" x:Key="drinksListArg">[drinksList]</InOutArgument>
+                                            <InArgument x:TypeArguments="x:Int32" x:Key="indexArg">0</InArgument>
+                                            <InArgument x:TypeArguments="x:Object" x:Key="itemArg">[currentDrink]</InArgument>
+                                          </ui:InvokeCode.Arguments>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </ui:InvokeCode>
+                                      </Sequence>
+                                    </ui:CommentOut.Body>
+                                  </ui:CommentOut>
+                                  <FlowStep.Next>
+                                    <FlowStep x:Name="__ReferenceID10">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">0,741.4</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,83.6</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">100,825 100,855 110,855 110,865.6</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Sequence DisplayName="Method2: InsertToList Activity from Library" sap:VirtualizedContainerService.HintSize="200,83.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:Object" Name="item" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,53.2" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+                                          <ui:CommentOut.Body>
+                                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,164.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <l:InsertItem index="{x:Null}" item="{x:Null}" list="{x:Null}" DisplayName="Insert to list (InsertToList)" sap:VirtualizedContainerService.HintSize="388,53.2" sap2010:WorkflowViewState.IdRef="InsertItem_3" />
+                                            </Sequence>
+                                          </ui:CommentOut.Body>
+                                        </ui:CommentOut>
+                                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,53.2" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+                                          <ui:CommentOut.Body>
+                                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,83.6" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <l:GetItem index="{x:Null}" item="{x:Null}" list="{x:Null}" DisplayName="Get item (GetItem)" sap2010:WorkflowViewState.IdRef="GetItem_5" />
+                                            </Sequence>
+                                          </ui:CommentOut.Body>
+                                        </ui:CommentOut>
+                                        <l:InsertItem sap:VirtualizedContainerService.HintSize="388,53.2" sap2010:WorkflowViewState.IdRef="InsertItem_1" index="[index]" item="[item]" list="[currentDrink]" />
+                                        <l:GetItem sap:VirtualizedContainerService.HintSize="388,53.2" sap2010:WorkflowViewState.IdRef="GetItem_1" index="0" item="[item]" list="[drinksList]" />
+                                        <l:InsertItem sap:VirtualizedContainerService.HintSize="388,53.2" sap2010:WorkflowViewState.IdRef="InsertItem_2" index="0" item="[item]" list="[drinksList]" />
+                                        <l:GetItem DisplayName=" (InsertItem)" sap:VirtualizedContainerService.HintSize="388,53.2" sap2010:WorkflowViewState.IdRef="GetItem_2" index="0" item="[item]" list="[drinksList]" />
+                                        <l:GetItem DisplayName=" (GetItem)" sap:VirtualizedContainerService.HintSize="334,196" sap2010:WorkflowViewState.IdRef="GetItem_3" index="0" item="[item]" list="[drinksList]" />
+                                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="388,53.2" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;[InsertToList and GetItem activities from ListOpsLibrary]:&quot;+&quot; item &quot;+item.ToString+&quot; was inserted on index 0&quot;]" />
+                                      </Sequence>
+                                      <FlowStep.Next>
+                                        <FlowStep x:Name="__ReferenceID11">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">10,865.6</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,53.2</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">110,918 110,948 100,948 100,969</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,53.2" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                                            <ui:CommentOut.Body>
+                                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,194.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Sequence DisplayName="Method3: Class Library C#" sap:VirtualizedContainerService.HintSize="450,350.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                                  <Sequence.Variables>
+                                                    <Variable x:TypeArguments="x:Object" Name="item" />
+                                                  </Sequence.Variables>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <l:InsertItem DisplayName="Insert to list (InsertToList)" sap:VirtualizedContainerService.HintSize="388,53.2" sap2010:WorkflowViewState.IdRef="InsertItem_4" index="0" item="[item]" list="[drinksList]" />
+                                                  <l:GetItem DisplayName="Get item (GetItem)" sap:VirtualizedContainerService.HintSize="334,196" sap2010:WorkflowViewState.IdRef="GetItem_4" index="0" item="[item]" list="[drinksList]" />
+                                                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="388,53.2" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;[Insert To List and Get Item activities from ListActivities class library]:&quot;+&quot; item &quot;+item.ToString+&quot; was inserted on index 0&quot;]" />
+                                                </Sequence>
+                                              </Sequence>
+                                            </ui:CommentOut.Body>
+                                          </ui:CommentOut>
+                                          <FlowStep.Next>
+                                            <FlowStep x:Name="__ReferenceID8">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">0,969</av:Point>
+                                                  <av:Size x:Key="ShapeSize">200,24.8</av:Size>
+                                                  <av:PointCollection x:Key="ConnectorLocation">100,993.8 100,1001.4000000000001 298.8,1001.4000000000001</av:PointCollection>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <AddToCollection x:TypeArguments="x:Object" Collection="[billList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[currentDrink]" />
+                                              <FlowStep.Next>
+                                                <FlowStep x:Name="__ReferenceID0">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">298.8,960.2</av:Point>
+                                                      <av:Size x:Key="ShapeSize">434,82.4</av:Size>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="434,82.4" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Int32">[index]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Int32">[index-1]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </FlowStep>
+                                              </FlowStep.Next>
+                                            </FlowStep>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowStep.Next>
+                                    </FlowStep>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <FlowStep x:Name="__ReferenceID7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">380,388.8</av:Point>
+                              <av:Size x:Key="ShapeSize">200,24.8</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">480,413.6 480,443.6 500.2,443.6 500.2,493.6</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <RemoveFromCollection x:TypeArguments="x:Object" Collection="[drinksList]" DisplayName="Remove From Collection" sap:VirtualizedContainerService.HintSize="200,24.8" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_2" Item="[currentDrink]" />
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">381.2,493.6</av:Point>
+                                  <av:Size x:Key="ShapeSize">238,136.8</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">500.2,630.4000000000001 500.2,660.4000000000001 762.8,660.4000000000001 762.8,1001.4000000000001 732.8,1001.4000000000001</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="238,136.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="Insert">
+                                <InvokeMethod.TargetObject>
+                                  <InArgument x:TypeArguments="scg:List(x:Object)">[drinksList]</InArgument>
+                                </InvokeMethod.TargetObject>
+                                <InArgument x:TypeArguments="x:Int32">[drinksList.Count]</InArgument>
+                                <InArgument x:TypeArguments="x:Object">[currentDrink]</InArgument>
+                              </InvokeMethod>
+                              <FlowStep.Next>
+                                <x:Reference>__ReferenceID0</x:Reference>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
+        <x:Reference>__ReferenceID3</x:Reference>
+        <x:Reference>__ReferenceID4</x:Reference>
+        <x:Reference>__ReferenceID5</x:Reference>
+        <x:Reference>__ReferenceID6</x:Reference>
+        <x:Reference>__ReferenceID7</x:Reference>
+        <x:Reference>__ReferenceID0</x:Reference>
+        <x:Reference>__ReferenceID8</x:Reference>
+        <x:Reference>__ReferenceID9</x:Reference>
+        <x:Reference>__ReferenceID10</x:Reference>
+        <x:Reference>__ReferenceID11</x:Reference>
+      </Flowchart>
+    </DoWhile>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="450,53.2" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;You have to pay for: &quot;+String.Join(&quot;, &quot;,billList)]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="450,53.2" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;Updated list of drinks: &quot;+String.Join(&quot;, &quot;, drinksList )]" />
+  </Sequence>
+</Activity>

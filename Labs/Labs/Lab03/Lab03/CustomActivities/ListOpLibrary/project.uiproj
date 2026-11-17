@@ -1,0 +1,6 @@
+{
+  "Name": "ListOpLibrary",
+  "ProjectType": "Library",
+  "Description": "Blank Library",
+  "MainFile": "NewActivity.xaml"
+}
