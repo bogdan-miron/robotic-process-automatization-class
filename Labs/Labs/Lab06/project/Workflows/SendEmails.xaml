@@ -266,7 +266,11 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:SendMail DisplayName="Send SMTP Mail Message" Body="[&quot;Hello &quot; &amp; name &amp; &quot;,&quot; &amp; Environment.NewLine &amp; Environment.NewLine &amp; &quot;Your report is attached.&quot; &amp; Environment.NewLine &amp; Environment.NewLine &amp; &quot;Kind regards&quot;]" Email="[in_Settings(&quot;Sender&quot;)]" Files="[New String() {attachmentPath}]" Password="[in_Password]" Port="[CInt(in_Settings(&quot;SmtpPort&quot;))]" SecureConnection="Auto" Server="[in_Settings(&quot;SmtpServer&quot;)]" Subject="[&quot;Your report&quot;]" To="[email]" />
+                                <ui:SendMail DisplayName="Send SMTP Mail Message" Body="[&quot;Hello &quot; &amp; name &amp; &quot;,&quot; &amp; Environment.NewLine &amp; Environment.NewLine &amp; &quot;Your report is attached.&quot; &amp; Environment.NewLine &amp; Environment.NewLine &amp; &quot;Kind regards&quot;]" Email="[in_Settings(&quot;Sender&quot;)]" Password="[in_Password]" Port="[CInt(in_Settings(&quot;SmtpPort&quot;))]" SecureConnection="Auto" Server="[in_Settings(&quot;SmtpServer&quot;)]" Subject="[&quot;Your report&quot;]" To="[email]">
+                                  <ui:SendMail.Files>
+                                    <InArgument x:TypeArguments="x:String">[attachmentPath]</InArgument>
+                                  </ui:SendMail.Files>
+                                </ui:SendMail>
                               </Sequence>
                             </ActivityAction>
                           </ui:RetryScope.ActivityBody>

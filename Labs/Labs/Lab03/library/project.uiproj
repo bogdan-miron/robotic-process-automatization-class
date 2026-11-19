@@ -1,0 +1,6 @@
+{
+  "Name": "GameActivities",
+  "ProjectType": "Library",
+  "Description": "Lab 03 custom activities: ParseGuess and FormatHistory.",
+  "MainFile": "ParseGuess.xaml"
+}

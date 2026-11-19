@@ -143,7 +143,7 @@
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Filtered">[large]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:SortDataTable DisplayName="Sort Data Table by Amount, largest first" ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Amount" DataTable="[large]" Order="Descending" OutputDataTable="[large]" SortOrder="Descending" />
+    <ui:SortDataTable DisplayName="Sort Data Table by Amount, largest first" ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Amount" DataTable="[large]" Order="Decending" OutputDataTable="[large]" SortOrder="Descending" />
     <Assign DisplayName="Assign out_LargeCount">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[out_LargeCount]</OutArgument>
@@ -294,7 +294,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:SortDataTable DisplayName="Sort Data Table by Total, largest first" ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Total" DataTable="[totals]" Order="Descending" OutputDataTable="[totals]" SortOrder="Descending" />
+    <ui:SortDataTable DisplayName="Sort Data Table by Total, largest first" ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Total" DataTable="[totals]" Order="Decending" OutputDataTable="[totals]" SortOrder="Descending" />
     <ui:InvokeWorkflowFile DisplayName="Invoke WriteTableToExcel: large invoices" ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" UnSafe="False" WorkflowFileName="Workflows\WriteTableToExcel.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Table">[large]</InArgument>
